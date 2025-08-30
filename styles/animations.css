@@ -9,3 +9,119 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+@keyframes enlarge{
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes appear{
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #f00;
+  }
+}
+
+.card__icon-button .contour {
+  transition: fill 0.1s linear;
+}
+
+.card__icon-button .core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.card__icon-button .sparks {
+  fill: transparent;
+}
+
+.card__icon-button .main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .core {
+  transition-delay: 0;
+  fill: #000;
+}
+
+.card__icon-button:hover .main-body {
+  transition-delay: 0.05s;
+  fill: #000;
+}
+
+.card__icon-button:active .core {
+  transition-delay: 0;
+  fill: #000;
+}
+
+.card__icon-button:active .main-body {
+  transition-delay: 0.05s;
+  fill: #f00;
+}
+
+.card__icon-button .is-liked .sparks {
+  animation: appear 0.3s ease-in 0.3s 1;
+}
+
+.card__icon-button .is-liked .heart {
+  transform-origin: center;
+  animation: enlarge 0.3s ease-in 1;
+}
+
+.card__icon-button .is-liked .core {
+  transition-delay: 0;
+  fill: #f00;
+}
+
+.card__icon-button .is-liked .main-body {
+  transition-delay: 0.05s;
+  fill: #f00;
+}
+
+.card__icon-button .is-liked .contour {
+  transition-delay: 0.06s;
+  transition-duration: 0.3s;
+  fill: #f00;
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  display: block;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  background: #000;
+  inline-size: 100%;
+  block-size: 100%;
+  transform: translate(-100%, -20%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.button:hover {
+  color: #fff;
+  z-index: 1;
+}
+
+.button:hover svg {
+  filter: invert();
+  transition: filter 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: translate(0, 0);
+  transition: transform 0.5s ease-in-out;
+}
