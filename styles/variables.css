@@ -8,7 +8,9 @@
         repeating-linear-gradient(90deg, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
         linear-gradient(#E7E7E7, #1A1A1A);
     --article-bg-color: #fff;
-
+    --button-bg-color: var(--article-bg-color);
     --borders-width: 2px;
     --borders-color: #000;
+    --heart-inactive-color: #000;
+    --heart-active-color: #f00;
 }
