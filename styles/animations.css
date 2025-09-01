@@ -110,7 +110,7 @@
   background: var(--button-bg-color);
   inline-size: 100%;
   block-size: 100%;
-  transform: translate(-100%, -20%);
+  transform: translate(-100%, 0);
   transition: transform 0.5s ease-in-out;
   mix-blend-mode: difference;
   z-index: 0;

@@ -29,8 +29,8 @@
   font-family: var(--accent-font), sans-serif;
   background-color: var(--article-bg-color);;
   border: var(--borders-width) solid var(--borders-color);
-  margin-bottom: 100px;
-  min-block-size: 370px;
+  margin-block-end: 100px;
+  padding: 130px 0;
 }
 
 .page__header {
@@ -60,7 +60,7 @@
 
 .card__header {
   font-size: inherit;
-  font-weight: 715;
+  font-variation-settings: "wght" var(--card-header-font-weight);
   padding: 4px 10px;
   border-bottom: var(--borders-width) solid var(--borders-color);
 }
@@ -105,6 +105,8 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+  font-variation-settings: "wght" var(--card-font-weight);
+  line-height: 21px;
 }
 
 .card_texts span {
@@ -212,8 +214,18 @@
   gap: 12px;
 }
 
+.save__dialog__icon {
+  flex: 0 0 39px;
+}
+
+.save__dialog__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
 .save__dialog__button {
-  grid-column: span 2;
+  text-transform: uppercase;
 }
 
 .save__dialog::backdrop {
@@ -224,11 +236,17 @@
 @media( width <= 375px)
 {
   .header {
-    min-block-size: 327px;
+    padding: 122px 0;
   }
+
   .save__button {
     flex-direction: column;
     min-inline-size: 306px;
+    padding: 14px 20px;
+  }
+
+  .save__dialog:popover-open {
+    max-inline-size: 341px;
   }
   .save__button svg {
     width: 28px;

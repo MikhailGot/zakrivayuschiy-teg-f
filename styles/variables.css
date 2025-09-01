@@ -13,4 +13,7 @@
     --borders-color: #000;
     --heart-inactive-color: #000;
     --heart-active-color: #f00;
+
+    --card-header-font-weight: 715;
+    --card-font-weight: 410;
 }
